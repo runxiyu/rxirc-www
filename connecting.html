@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rx</title>
+<link rel="stylesheet" href="style.css" />
+
+<style>
+a.link {color: #0000A0;}
+a.visited {color: #A000A0;}
+a.active {color: #00A000;}
+pre, code {font-size: 11pt; background: #ddd;}
+</style>
+</head>
+<body>
+<h1>rx - how to connect</h1>
+<p>To access rx, you need an IRC client or an IRC bouncer.  Point your client to your <a href="servers.html">server of choice</a>:</p>
+<ul>
+	<li>Port <code>6697</code>, TLS enabled</li>
+</ul>
+<p>You may also connect to rx without encryption.  Doing so is, however, not recommended, as doing so makes you vulnerable to man-in-the-middle attacks and leaking sensitive conversations.  If you still wish to connect to rx without encryption, you can do so by connecting to any server you want, with the following parameters:</p>
+<ul>
+	<li>Port <code>6667</code>, plain</li>
+</ul>
+<p>We support IPv6, encourage <a href="nickserv.html">SASL authentication</a>, and allow Tor exit nodes on the network.</p>
+
+<h2>Transports</h2>
+
+<h3>Can I connect from Tor?</h3>
+<p>We allow annonymous access to rx using Tor, and don't require SASL authentication.  You can connect to:</p>
+<ul>
+	<li><code>7zgv6657ybvqnqiuwbnolzgnhbtutbwvuecd2qtsmtpeuclcie7ngvid.onion</code>, port <code>6667</code>, plain</li>
+</ul>
+<p>The hidden service runs on irc.andrewyu.org.  For many, Tor's end-to-end encryption will be sufficient.  However, if willing to use SASL EXTERNAL you must connect with TLS.  To do so, just add these two lines in <code>/etc/tor/torrc</code>:</p>
+<pre><code># irc.andrewyu.org Tor service
+MapAddress irc.andrewyu.org 7zgv6657ybvqnqiuwbnolzgnhbtutbwvuecd2qtsmtpeuclcie7ngvid.onion
+</code></pre>
+<p>And connect to <code>irc.andrewyu.org</code>, port <code>6697</code> with TLS enabled.<br/>You'll get a <code>[nick].tor.gateway.irc.andrewyu.org</code> cloak when connecting to our Onion service.</p>
+<p>We also allow Tor exit nodes on the network (in which case you'll get a <code>[nick].c.tor.gateway.irc.andrewyu.org</code> cloak), but connecting to the clearnet from Tor isn't recommended.  Please use our Onion service instead.</p>
+
+<h3>Can I connect from Matrix?</h3>
+<p>We once had an instance of Matrix-Appservice-IRC hosted by vern.cc.  The bridge has been discontinued.  Additionally, if you're willing to host a Matrix-Appservice-IRC instance, please reach out to us in the <code>#support</code> channel before doing so.  Alternatively, you can use <a href="https://github.com/hifi/heisenbridge">Heisenbridge</a> to connect to the network.</p>
+
+<h3>Can I connect from XMPP?</h3>
+<p>We do not run an XMPP-to-IRC bridge.  However, you can use <a href="https://codeberg.org/poezio/biboumi">Biboumi</a> to connect to the network.  These instances should work fine:</p>
+<ul>
+	<li>cheogram.com: <code>#support%irc.andrewyu.org@irc.cheogram.com</code> to join the <code>#support</code> channel</li>
+	<li>hmm.st: <code>#support%irc.andrewyu.org@irc.hmm.st</code> to join the <code>#support</code> channel</li>
+</ul>
+<p>If using one of these instances, you'll have a <code>[nick].xmpp.ugateway.irc.andrewyu.org</code> cloak, to indicate that you're using an unaffiliated XMPP gateway to connect (e.g.: <code>funderscore.xmpp.ugateway.irc.andrewyu.org</code>).</p>
+
+<h2>Need help?</h2>
+<p>We're available in the <code>#support</code> channel for any questions that may arise.  If having issues connecting, email irc＠andrewyu.org (don't copy-paste the email address).</p>
+</body>
+</html>

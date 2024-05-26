@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rx</title>
+<link rel="stylesheet" href="style.css" />
+
+<style>
+a.link {color: #0000A0;}
+a.visited {color: #A000A0;}
+a.active {color: #00A000;}
+pre, code {font-size: 11pt; background: #ddd;}
+</style>
+</head>
+<body>
+<h1>rx - how to register a nickname</h1>
+<p>Registering a nickname on IRC means it is reserved for you to use, and no one else.  It keeps others from using your nick, thus making you able to use it at all times.  If you don't register your nick, others may end up using it.  As such, some channels may require that you have registered it before chatting.</p>
+
+<h2>Registering</h2>
+<p>To register your nick, after choosing it, you can run the following command in your IRC client once connected:</p>
+<pre><code>/MSG NickServ REGISTER mypassword myemail@address.tld</code></pre>
+<p>Substitute <code>mypassword</code> with a secure password and <code>myemail@address.tld</code> with your email address.  You will get sent a confirmation email; follow the instructions in the email to verify your account.</p>
+
+<h2>Logging in</h2>
+<p>After having registered your IRC nickname, you can log in manually:</p>
+<pre><code>/MSG NickServ IDENTIFY mypassword</code></pre>
+<p>This can be used to check if registration was successful.  However, having to do this everytime you connect can quickly be annoying, which is why we recommend using either SASL PLAIN or SASL EXTERNAL to connect.</p>
+
+<h2>Setting ENFORCE</h2>
+<p>By default, NickServ allows you to reclaim your nickname (see <code>/MSG NickServ HELP REGAIN</code> and <code>/MSG NickServ HELP GHOST</code>). You may want it to prevent people from using it altogether:</p>
+<pre><code>/MSG NickServ SET ENFORCE ON
+/MSG NickServ SET ENFORCETIME 1</code></pre>
+
+<h2>Using SASL PLAIN</h2>
+<p>The idea behind SASL PLAIN is that you, upon connection, authenticate with your username and password automatically before you're visible to the rest of the network.  Setup varies according to the client, but many GUI clients typically have a setting option named `login method' or similar, and many TUI clients have commands you can use to modify your configuration and setup SASL.  For example, to set it up in WeeChat:</p>
+<pre><code>/SET irc.server.rx.sasl_mechanism plain
+/SET irc.server.rx.sasl_username mynickname
+/SET irc.server.rx.sasl_password mypassword
+/SAVE</code></pre>
+
+<h2>Using SASL EXTERNAL</h2>
+<p>Despite a bit harder to setup than SASL PLAIN, it lets you forget about usernames and passwords and instead connect using a TLS client certificate.  Setting it up is out of scope here, as it's mainly used by IRC power users, but <a href="https://libera.chat">Libera.Chat</a> has a very detailed <a href="https://libera.chat/guides/certfp">guide</a> on how to set it up.</p>
+
+<h2>Forgot your password?</h2>
+<p>If you forgot your password, you can ask NickServ to email a key that can be used to set a new password:</p>
+<pre><code>/MSG NickServ SENDPASS mynickname</code></pre>
+<p>Once you received the key, you can set a new password:</p>
+<pre><code>/MSG NickServ SETPASS mynickname mykey mypassword</code></pre>
+
+<h2>Need help?</h2>
+<p>You may run the following:</p>
+<pre><code>/MSG NickServ HELP</code></pre>
+<p>Alternatively, we're available in the <code>#support</code> channel for any questions that may arise.</p>
+</body>
+</html>

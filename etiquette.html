@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rx</title>
+<link rel="stylesheet" href="style.css" />
+
+<style>
+a.link {color: #0000A0;}
+a.visited {color: #A000A0;}
+a.active {color: #00A000;}
+pre, code {font-size: 11pt; background: #ddd;}
+</style>
+</head>
+<body>
+<h1>rx - etiquette</h1>
+<p>Like many other chat platforms, IRC has a culture.  This guide is for newbies who came from another chat platform or are new to this concept.</p>
+
+<h2>Basics</h2>
+<p>IRC is a plain-text protocol.  It's plain simple and lightweight, and that's why we like it!</p>
+
+<h2>Asking questions</h2>
+<p>Many come to IRC to ask questions.  The best way to do so would be:</p>
+<ul>
+	<li><b>State your question in great detail.</b>  Do not ask to ask, or just say "hi" and wait until someone answers.  Instead, say "Hello, I have an issue with my mail server, I can't send messages from it. I run Postfix on debian. Here are my logs: &lt;link to logs&gt;."</li>
+	<li><b>Be prepared to wait.</b>  This is not some 24/7 instant support chat, we're all volunteers.  As such, don't disconnect shortly after asking and don't ask your question over and over again.  Just wait until someone is available to answer.  If the discussion seems to have moved on, you can re-state your question, but don't do this too often.</li>
+	<li><b>Do your own research.</b>  Continue researching.  Report more progress into solving your issue.  Don't also forget to read the documentation.</li>
+	<li><b>Be polite.</b>  Thank people for helping you, respect instructions given by moderators, etc.</li>
+</ul>
+
+<h3>Don't ask to ask</h3>
+<p>Every now and then, newbies come and ask to ask.  Especially in a quiet channel, it is considered bad practise.  Here's an example:</p>
+<pre><code>--&gt; hax has joined #support
+-!- Topic: "Welcome to #support, which is for asking questions related to IRC."
+&lt;hax&gt; any IRC experts around?
+~ a while later ~
+&lt;f_&gt; hax: what do you need help with?
+~ a while later ~
+&lt;hax&gt; f_: &lt; asks actual question... &gt;
+</code></pre>
+<p>This is just useless.  The channel is dedicated towards IRC questions, so of course IRC questions are welcome.  Just ask your question right away.  Another example:</p>
+<pre><code>--&gt; f_ has joined #support
+-!- Topic: "Welcome to #support, which is for asking questions related to IRC."
+&lt;f_&gt; hi
+~ a while later ~
+&lt;hax&gt; f_: ????
+~ a while later ~
+&lt;f_&gt; hax: &lt; asks actual question... &gt;
+</code></pre>
+<p>This one is even more vague.  Instead, do this:</p>
+<pre><code>&lt;f_&gt; hi, I need help with ...
+</code></pre>
+
+<h3>State your question in great detail</h3>
+<p>Without giving any detail about your issue, we cannot help you.  Consider someone sent this:</p>
+<pre><code>&lt;f_&gt; hi, I got an error. How do I fix it?
+</code></pre>
+<p>When you ask help about an issue, you should provide as much details as possible.  We cannot read what's in your mind after all! :).  At least try to provide:</p>
+<ul>
+	<li><b>What happened?</b>  Error page, output, logs, etc...</li>
+	<li><b>How?</b>  Steps to reproduce the error.</li>
+	<li><b>What was the expected result?</b>  What you were expecting instead of the error.</li>
+	<li><b>Technical information.</b>  Such as the OS version, software you're using, its version, etc...</li>
+</ul>
+<p>Preferably also do some research on your problem <b>before</b> asking.  Else you're likely to waste your time if your question can be answered by a manpage.  If unsure, just ask!</p>
+
+<h3>Stay around</h3>
+<p>Especially on IRC, which was designed to be ephemeral, stay connected.  We're not some 24/7 instant support channel, so your question might take time to get answered.  Don't quit right after asking, this is <i>bad</i>:</p>
+<pre><code>12:34 --&gt; ircuser has joined #support
+12:35 &lt;irchaxx0r&gt; Hi, I need help with IRC, somehow my client keeps disconnecting after a bit. Am using irssi.
+12:37 &lt;-- irchaxx0r has quit (Quit: Client closed)
+12:40 &lt;f_&gt; Hi everyone, back from work. Does anyone need help today?
+</code></pre>
+<p>Oftentimes the channel is quiet, and you have to wait until someone reads your question and can answer, which can take hours.  If you're unable to keep your IRC client open for longer, consider <a href="/nickserv.html">registering your nick</a> so that people can send you a memo, or come back later, when you <b>can</b> keep your client open for a long time.  Also don't keep asking over and over:</p>
+<pre><code>12:34 --&gt; irchaxx0r has joined #support
+12:35 &lt;irchaxx0r&gt; Hi, I need help with IRC, somehow my client keeps disconnecting after a bit. Am using irssi.
+12:50 &lt;irchaxx0r&gt; Anyone? I need help with IRC, somehow my client keeps disconnecting after a bit. I use irssi.
+13:20 &lt;irchaxx0r&gt; Please??? I need help with IRC, somehow my client keeps disconnecting after a bit. I use irssi.
+13:40 &lt;irchaxx0r&gt; Come on please, I need help ASAP
+</code></pre>
+<p>This can be considered rude, and spammy.  Avoid it.</p>
+
+<h3>Be polite</h3>
+<p>Remember that we're all volunteers.  Treat people just like how you'd like to be treated, else you may get banned from whatever channel you asked in, left still without an answer.</p>
+
+<h2>Pinging</h2>
+<p>Some chat platforms usually prefix nicks with an '@' symbol.  By contrast, in IRC, to ping someone just type their name. For example:</p>
+<pre><code>&lt;f_&gt; hax: hi
+&lt;hax&gt; f_: hi</code></pre>
+<p>Usually it may help to state the context in which you're pinging someone, e.g.:</p>
+<pre><code>&lt;john&gt; hi
+[...unrelated conversation...]
+&lt;alice&gt; &gt; &lt;john&gt; hi
+&lt;alice&gt; hi john!
+</code></pre>
+
+<h2>Editing</h2>
+<p>IRC does not support editing.  Folks usually either correct their message by sending a new message with a sed-like s/// syntax, e.g.:</p>
+<pre><code>&lt;f_&gt; hmm I got it wrkoing in hte end..
+&lt;f_&gt; s/wrkoing/working/, s/hte/the/</code></pre>
+<p>...or do it the 'SMS'-style, e.g.:</p>
+<pre><code>&lt;f_&gt; hmm I got it wrkoing in hte end..
+&lt;f_&gt; *working, *the</code></pre>
+<p>Whatever you do, don't resend your whole message as that can be spammy to other folks.</p>
+
+<h2>Pasting</h2>
+<p>Sometimes, you may want to share e.g. logs of some command.  As a general rule of thumb, do not paste more than 4 lines of logs in a channel.  This will spam the channel and may annoy other folks.  Instead, use a pastebin such as <a href="https://paste.debian.net">paste.debian.net</a> and share the link.</p>
+
+<h2>Messaging</h2>
+<p>While messaging, don't use SMS-style abbreviations.  IRC users usually have a full-sized keyboard and are expected to use it.</p>
+
+<h2>Other tips</h2>
+<ul>
+	<li>Don't include your away status in your nick, e.g. <code>tom|cooking</code>.  That's what the <code>/AWAY</code> command is for!</li>
+	<li>If there are bots in the chat, don't abuse them to spam the channel.  That can get you muted or even banned.</li>
+	<li>Don't bring IRC bots in a channel without permission.</li>
+</ul>
+
+<h2>Need help?</h2>
+<p>As always, we're available in the <code>#support</code> channel for any questions that may arise.</p>
+</body>
+</html>

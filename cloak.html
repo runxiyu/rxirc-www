@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rx</title>
+<link rel="stylesheet" href="style.css" />
+
+<style>
+a.link {color: #0000A0;}
+a.visited {color: #A000A0;}
+a.active {color: #00A000;}
+pre, code {font-size: 11pt; background: #ddd;}
+</style>
+</head>
+<body>
+<h1>rx - how to get a cloak</h1>
+<p>A cloak is a custom virtual host that replaces your current host or IP address shown in join/part/quit messages and in <code>/WHOIS</code>.  For example, <code>someone@10-10-32-1.res.dsl.example.com</code> might appear as <code>someone@someone.netuser.irc.andrewyu.org</code>.</p>
+
+<h2>Getting a user cloak</h2>
+<p>User cloaks are in the form <code>(your account name).netuser.irc.andrewyu.org</code> and it is assumed that you have <a href="/nickserv.html">already registered your nickname</a>.<br/>
+To get a user cloak, simply send the following:</p>
+<pre><code>/MSG HostServ TAKE $account.netuser.irc.andrewyu.org</code></pre>
+<p><b>Note: Don't substitute <code>$account</code>.  Services will automatically substitute it with your account name.</b></p>
+
+<h2>(Not) Protecting your identity</h2>
+<p>While cloaks may look nicer than raw hostmasks/IP addresses, they're not meant to be used for protecting your identity.  Cloaks will replace your IP/host when connected, but there are a few exceptions:</p>
+<ul>
+	<li>If not using SASL, cloaks won't be set until you log in</li>
+	<li>If services are down, no cloaks will be set at all</li>
+	<li>Network administrators can see real hosts/IP addresses at any time</li>
+</ul>
+<p>If these exceptions are fine, you may use cloaks.  Else, you shouldn't connect to the internet from this IP in the first place.<br/>
+If you wish to protect your identity, connect from <a href="https://torproject.org">Tor</a> instead.</p>
+
+<h2>Different kinds of cloak</h2>
+<p>Other kinds of cloaks are also set.  Most of them cannot be requested, but they're still listed for convienience:</p>
+<ul>
+	<li><code>netadmin.irc.andrewyu.org</code>: indicates that the user is a network administrator</li>
+	<li><code>[user].tor.gateway.irc.andrewyu.org</code>: indicates that the user is connecting from Tor</li>
+	<li><code>[user].xmpp.ugateway.irc.andrewyu.org</code>: indicates that the user is connecting from an unaffiliated XMPP-to-IRC gateway</li>
+</ul>
+
+<h2>Removing your cloak</h2>
+<p>Just send the following to HostServ:</p>
+<pre><code>/MSG HostServ DROP</code></pre>
+<p>Or if you wish to just temporarily disable it:</p>
+<pre><code>/MSG HostServ OFF</code></pre>
+<p>And turn it on again with:</p>
+<pre><code>/MSG HostServ ON</code></pre>
+
+<h2>Need help?</h2>
+<p>You may run the following:</p>
+<pre><code>/MSG HostServ HELP</code></pre>
+<p>Alternatively, we're available in the <code>#support</code> channel for any questions that may arise.</p>
+</body>
+</html>

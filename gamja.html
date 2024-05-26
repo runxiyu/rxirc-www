@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rx</title>
+<link rel="stylesheet" href="style.css" />
+
+<style>
+a.link {color: #0000A0;}
+a.visited {color: #A000A0;}
+a.active {color: #00A000;}
+pre, code {font-size: 11pt; background: #ddd;}
+</style>
+</head>
+<body>
+<h1>rx - how to gamja</h1>
+<p>gamja is a fairly popular and FOSS IRC webclient.  It is a good choice for IRC newbies.  As such, we host (<a href="https://git.andrewyu.org/fun/gamja.git">a fork of</a>) it at https://gamja.irc.andrewyu.org/.
+
+<h2>Connecting</h2>
+<p>When launching gamja you'll be met with the following form:</p>
+<pre><code><b>Connect to rx</b>
+
+Nickname:
+[______________________________________]
+Password:            
+[______________________________________]
+
+[X] Auto-join channels #support, #chat
+[ ] Remember me
+
+ &gt;  Advanced options
+
+[ Connect ]
+</code></pre>
+<p>The password is only required if you <a href="/nickserv.html">registered your nickname</a>.  Just enter a nickname, click on "Connect" and start chatting!</p>
+
+<h2>Embedding</h2>
+<p>You can either embed a client into your web page, or craft a URL others can use to join your channel.  For example, the following automatically joins #support:</p>
+<pre><code>https://gamja.irc.andrewyu.org/#support</code></pre>
+<p>The following automatically joins #support and sets the nickname to "IRCUser":</p>
+<pre><code>https://gamja.irc.andrewyu.org/?nick=IRCUser#support</code></pre>
+<p>You can embed gamja like so:</p>
+<pre><code>&lt;iframe src="https://web.libera.chat/gamja/#libera" style="border:0; width:100%; height:450px;"&gt;&lt;/iframe&gt;</code></pre>
+
+<h2>Need help?</h2>
+<p>You may run the following:</p>
+<pre><code>/HELP</code></pre>
+<p>Alternatively, we're available in the <code>#support</code> channel for any questions that may arise.</p>
+</body>
+</html>

@@ -1,0 +1,7 @@
+body {
+	font-family: system-ui, sans-serif;
+	background-color: hsl(32, 98%, 92%);
+	margin: auto;
+	max-width: 50rem;
+	width: calc(100% - 10px);
+}
