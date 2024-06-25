@@ -13,6 +13,31 @@ pre, code {font-size: 11pt; background: #ddd;}
 </head>
 <body>
 <h1>rx - how to register a nickname</h1>
+<p>
+<b>
+	Note: Atheme is currently disabled.
+</b>
+</p>
+
+<blockquote>
+	<p>
+	Hello, this is NickServ speaking. I have taken all your accounts. Refunds will be considered in the near future, after you re-do the registration process (not yet implemented). For reasons of why, please visit #funderscore-sucks.
+	</p>
+	<p>
+	Basic nickname registration services are now available. Please only register one nick for now, grouping will be implemented later. Message me `REGISTER` to register your current nick to your current TLS cert. TLS certs required. Passwords not implemented.
+	</p>
+</blockquote>
+
+<p>
+Ok, so basically Atheme crashed while restarting because we temporarily enabled GroupServ previously which left <code>GFA</code> and <code>GDBV</code> directives in the Atheme OpenSEX database that the newly-restarted Atheme with GroupServ unloaded couldn't understand. So Runxi was manually editing the Atheme database while funderscore ran <code>atheme-dbverify</code>... and atheme-dbverify was broken and the entire database went to <code>/dev/null</code>.
+</p>
+
+<p>
+So: no more Atheme since it won't support InspIRCd v4 anyway.
+</p>
+
+<h1>Below is the old Atheme version</h1>
+
 <p>Registering a nickname on IRC means it is reserved for you to use, and no one else.  It keeps others from using your nick, thus making you able to use it at all times.  If you don't register your nick, others may end up using it.  As such, some channels may require that you have registered it before chatting.</p>
 
 <h2>Registering</h2>
